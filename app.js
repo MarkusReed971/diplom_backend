@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const express = require('express')
 const bodyParser = require('body-parser');
 const app = express()
@@ -16,15 +17,17 @@ try {
     console.error(e);
 }
 
+mongoose.connect("mongodb+srv://admin:1234ewq@cluster0.lqycm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false }, function(err){
+    if(err) return console.log(err);
+    app.listen(port, function(){
+        console.log("Сервер ожидает подключения...");
+    });
+});
 
 app.get('/', (req, res) => {
     res.send('Home Page')
 })
 
-app.post(`/`, (req, res) => {
-    res.end(JSON.stringify(req.body))
-});
-
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
-})
+// app.listen(port, () => {
+//     console.log(`Example app listening at http://localhost:${port}`)
+// })

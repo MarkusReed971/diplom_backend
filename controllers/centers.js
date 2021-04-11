@@ -24,7 +24,6 @@ router.post('/', (req, res) => {
 });
 
 router.get(`/:id`, (req, res) => {
-    // res.set({ 'content-type': 'application/json;'});
     res.end(JSON.stringify(CENTERS[req.params.id]))
 });
 
