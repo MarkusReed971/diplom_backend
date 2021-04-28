@@ -12,6 +12,6 @@ module.exports = (centerModel) => ({
 
     get: (_id) => centerModel.findById(_id),
 
-    getAll: () => centerModel.find()
+    getAll: (skip = 0, limit = 10, sort = 'name') => centerModel.find().skip(skip).limit(limit).sort(sort)
 })
 
