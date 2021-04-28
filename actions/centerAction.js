@@ -12,6 +12,6 @@ module.exports = (centerModel) => ({
 
     get: (_id) => centerModel.findById(_id),
 
-    getAll: (skip = 0, limit = 10, sort = 'name') => centerModel.find().skip(skip).limit(limit).sort(sort)
+    getAll: (skip = 0, limit = 10, sort = 'name', name = '') => centerModel.find({name: {$regex: new RegExp(name), $options: 'i'}}).skip(skip).limit(limit).sort(sort)
 })
 

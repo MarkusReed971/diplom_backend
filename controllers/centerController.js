@@ -7,6 +7,11 @@ const centerModel = require('../models/centerModel')
 module.exports = () => {
     const center = centerAction(centerModel)
 
+    router.get('/:skip&&:limit&&:sort&&:name', async (req, res) => {
+        const centers = await center.getAll(parseInt(req.params.skip), parseInt(req.params.limit), req.params.sort, req.params.name)
+        res.send(centers)
+    });
+    
     router.get('/:skip&&:limit&&:sort', async (req, res) => {
         const centers = await center.getAll(parseInt(req.params.skip), parseInt(req.params.limit), req.params.sort)
         res.send(centers)
