@@ -10,6 +10,12 @@ const schema = new Schema({
     worker_id: {type: ObjectId},
     date: {type: Date, required: true},
     status: {type: String, required: true},
+    images: [
+        {
+            url: String,
+            name: String
+        }
+    ]
 })
 
 module.exports = model('Request', schema)
