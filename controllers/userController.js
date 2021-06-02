@@ -26,6 +26,11 @@ module.exports = () => {
         res.send(users)
     });
 
+    router.get('/center_id/:center_id', async (req, res) => {
+        const users = await user.getAllByCenterId(req.params.center_id)
+        res.send(users)
+    });
+
     router.post('/', async (req, res) => {
         const target = await user.add(req.body.payload)
         res.send(target)

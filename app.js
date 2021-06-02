@@ -11,7 +11,7 @@ try {
     const controllers = require('require-all')(__dirname + '/controllers');
     app.use(`/centers`, controllers['centerController']())
     app.use(`/users`, controllers['userController']())
-    app.use(`/workers`, controllers['workerController']())
+    app.use(`/requests`, controllers['requestController']())
 } catch (e) {
     console.error(e);
 }
