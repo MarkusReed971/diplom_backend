@@ -10,6 +10,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 try {
     const controllers = require('require-all')(__dirname + '/controllers');
     app.use(`/centers`, controllers['centerController']())
+    app.use(`/users`, controllers['userController']())
+    app.use(`/workers`, controllers['workerController']())
 } catch (e) {
     console.error(e);
 }
@@ -17,7 +19,7 @@ try {
 mongoose.connect("mongodb+srv://admin:1234ewq@cluster0.lqycm.mongodb.net/diplomdb?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false }, function(err){
     if(err) return console.log(err);
     app.listen(port, function(){
-        console.log("Сервер ожидает подключения...");
+        console.log(`http://localhost:${port} ожидает подключения...`);
     });
 });
 

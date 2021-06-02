@@ -11,9 +11,14 @@ module.exports = () => {
         const centers = await center.getAll(parseInt(req.params.skip), parseInt(req.params.limit), req.params.sort, req.params.name)
         res.send(centers)
     });
-    
+
     router.get('/:skip&&:limit&&:sort', async (req, res) => {
         const centers = await center.getAll(parseInt(req.params.skip), parseInt(req.params.limit), req.params.sort)
+        res.send(centers)
+    });
+
+    router.get('/', async (req, res) => {
+        const centers = await center.getAll()
         res.send(centers)
     });
 
