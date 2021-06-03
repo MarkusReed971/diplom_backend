@@ -12,6 +12,7 @@ try {
     app.use(`/centers`, controllers['centerController']())
     app.use(`/users`, controllers['userController']())
     app.use(`/requests`, controllers['requestController']())
+    app.use(`/dialogs`, controllers['dialogController']())
 } catch (e) {
     console.error(e);
 }
