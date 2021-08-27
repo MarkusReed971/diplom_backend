@@ -1,0 +1,18 @@
+.rating {
+    margin-bottom: 4px;
+}
+
+.rating div {
+    display: flex;
+}
+
+.svg {
+    width: 14px;
+    height: 14px;
+    margin: 1px 4px 1px 0;
+}
+
+.rating span {
+    font-weight: bold;
+    color: #00FF00;
+}

@@ -6,43 +6,43 @@ const requestModel = require('../models/requestModel')
 module.exports = () => {
     const request = requestAction(requestModel)
 
-    router.get('/center_id/:center_id&&:skip&&:limit&&:sort', async (req, res) => {
-        const requests = await request.getAllByCenterId(req.params.center_id, parseInt(req.params.skip), parseInt(req.params.limit), req.params.sort)
-        res.send(requests)
+    router.get('/centerId/:centerId&&:skip&&:limit&&:sort', async (req, res) => {
+        const requests = await request.getAllByCenterId(req.params.centerId, parseInt(req.params.skip), parseInt(req.params.limit), req.params.sort)
+        requests[0] ? res.send(requests) : res.status(404).json("Заявки не найдены!")
     });
 
-    router.get('/center_id/:center_id', async (req, res) => {
-            const requests = await request.getAllByCenterId(req.params.center_id)
-            res.send(requests)
+    router.get('/centerId/:centerId', async (req, res) => {
+        const requests = await request.getAllByCenterId(req.params.centerId)
+        requests[0] ? res.send(requests) : res.status(404).json("Заявки не найдены!")
     });
 
-    router.get('/user_id/:user_id&&:skip&&:limit&&:sort', async (req, res) => {
-        const requests = await request.getAllByUserId(req.params.user_id, parseInt(req.params.skip), parseInt(req.params.limit), req.params.sort)
-        res.send(requests)
+    router.get('/userId/:userId&&:skip&&:limit&&:sort', async (req, res) => {
+        const requests = await request.getAllByUserId(req.params.userId, parseInt(req.params.skip), parseInt(req.params.limit), req.params.sort)
+        requests[0] ? res.send(requests) : res.status(404).json("Заявки не найдены!")
     });
 
-    router.get('/user_id/:user_id', async (req, res) => {
-        const requests = await request.getAllByUserId(req.params.user_id)
-        res.send(requests)
+    router.get('/userId/:userId', async (req, res) => {
+        const requests = await request.getAllByUserId(req.params.userId)
+        requests[0] ? res.send(requests) : res.status(404).json("Заявки не найдены!")
     });
 
-    router.get('/worker_id/:worker_id&&:skip&&:limit&&:sort', async (req, res) => {
-            const requests = await request.getAllByWorkerId(req.params.worker_id, parseInt(req.params.skip), parseInt(req.params.limit), req.params.sort)
-            res.send(requests)
+    router.get('/workerId/:workerId&&:skip&&:limit&&:sort', async (req, res) => {
+        const requests = await request.getAllByWorkerId(req.params.workerId, parseInt(req.params.skip), parseInt(req.params.limit), req.params.sort)
+        requests[0] ? res.send(requests) : res.status(404).json("Заявки не найдены!")
     });
-    router.get('/worker_id/:worker_id', async (req, res) => {
-            const requests = await request.getAllByWorkerId(req.params.worker_id)
-            res.send(requests)
+    router.get('/masterId/:masterId', async (req, res) => {
+        const requests = await request.getAllByMasterId(req.params.masterId)
+        requests[0] ? res.send(requests) : res.status(404).json("Заявки не найдены!")
     });
 
     router.get('/:id', async (req, res) => {
         const target = await request.getById(req.params.id)
-        res.send(target)
+        target ? res.send(target) : res.status(404).json("Заявка не найдена!")
     });
 
     router.get('/', async (req, res) => {
         const requests = await request.getAll()
-        res.send(requests)
+        requests[0] ? res.send(requests) : res.status(404).json("Заявки не найдены!")
     });
 
     router.post('/', async (req, res) => {
@@ -51,13 +51,21 @@ module.exports = () => {
     });
 
     router.delete('/:id', async (req, res) => {
-        const target = await request.delete(req.params.id)
-        res.send(target)
+        if (await request.getById(req.params.id)) {
+            const target = await request.delete(req.params.id)
+            res.send(target)
+        } else {
+            res.status(404).json("Заявка не найдена!")
+        }
     });
 
     router.put('/:id', async (req, res) => {
-        const target = await request.update(req.params.id, req.body.payload)
-        res.send(target)
+        if (await request.getById(req.params.id)) {
+            const target = await request.update(req.params.id, req.body.payload)
+            res.send(target)
+        } else {
+            res.status(404).json("Заявка не найдена!")
+        }
     });
 
     return router;

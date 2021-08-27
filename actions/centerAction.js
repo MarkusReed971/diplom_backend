@@ -10,9 +10,28 @@ module.exports = (centerModel) => ({
 
     update: (_id, payload) => centerModel.findOneAndUpdate({_id}, payload),
 
-    get: (_id) => centerModel.findById(_id),
+    getById: (_id) => centerModel.findById(_id),
 
-    getAll: (skip = 0, limit = 10, sort = 'name', name = '') =>
-        centerModel.find({name: {$regex: new RegExp(name), $options: 'i'}}).skip(skip).limit(limit).sort(sort)
+    getByOwnerId: (ownerId) => centerModel.findOne({ownerId}),
+
+    isExist: (inn) => centerModel.findOne({inn}).then(res => !!res),
+
+    getAll: (skip = 0, limit = 8, sort = '-rating', center) => {
+        const {name, city, deviceType, deviceCompany, status} = center
+        const formatCenter = {
+            name: {$regex: new RegExp(name), $options: 'i'},
+            "address.city": {$regex: new RegExp(city), $options: 'i'}
+        }
+        if (deviceType._id) formatCenter.deviceTypes = deviceType._id
+        if (deviceCompany._id) formatCenter.deviceCompanies = deviceCompany._id
+        if (status) formatCenter.status = status
+
+        return centerModel
+            .find(formatCenter)
+            .skip(skip)
+            .limit(limit)
+            .sort(sort)
+    }
+
 })
 

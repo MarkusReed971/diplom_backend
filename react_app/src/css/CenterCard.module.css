@@ -1,0 +1,35 @@
+.card img {
+    width: 198px;
+    height: 140px;
+}
+
+h3 {
+    color: #0091D9;
+    font-weight: bold;
+    font-size: 14px;
+    max-width: 198px;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 10px 0 4px;
+}
+
+.time {
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.card {
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 2px;
+    padding: 10px;
+}
+
+.card:hover {
+    background-color: #DDF4FF;
+}
+
+.link {
+    text-decoration: none;
+    color: #333333;
+}

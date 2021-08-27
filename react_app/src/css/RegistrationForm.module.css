@@ -1,0 +1,16 @@
+.regForm {
+    width: 850px;
+}
+
+.column {
+    width: 50%;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+}
+
+.footer {
+    margin-top: 30px;
+}

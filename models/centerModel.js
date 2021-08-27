@@ -1,32 +1,39 @@
-const {Schema, model, ObjectId} = require('mongoose')
+const {Schema, model, ObjectId,} = require('mongoose')
 
 const schema = new Schema({
     name: {type: String, required: true},
     description: String,
-    address: {type: String, required: true},
-    phone: {type: String, unique: true, required: true},
-    date_registration: {type: Date, required: true},
-    date_registration_in_app: {type: Date, required: true},
+    address: {
+        city: String,
+        district: String,
+        street: String,
+        house: String,
+    },
+    phone: {type: String, required: true},
+    mail: {type: String},
+    date: {type: Date, required: true},
+    dateInApp: {type: Date, required: true},
     status: {type: Boolean, required: true},
-    user_id: {type: ObjectId, required: true},
+    ownerId: {type: ObjectId, required: true},
     inn: {type: String, unique: true, required: true},
     schedule: [
         {
-            day: {type: String, required: true},
-            start_time: {type: String, required: true},
-            end_time: {type: String, required: true},
+            day: {type: Number, required: true},
+            startTime: {type: String},
+            endTime: {type: String},
+            isHoliday: Boolean,
         }
     ],
-    images: [
+    images: [String],
+    rating: Number,
+    deviceTypes: [ObjectId],
+    deviceCompanies: [ObjectId],
+    reviews: [
         {
-            name: {type: String},
-            url: {type: String},
-        }
-    ],
-    services: [
-        {
-            name: {type: String},
-            price: {type: Number},
+            userId: ObjectId,
+            text: String,
+            date: Date,
+            rating: Number,
         }
     ]
 })

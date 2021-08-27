@@ -1,0 +1,56 @@
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    display: flex;
+}
+
+.content img {
+    object-fit: cover;
+}
+
+.details {
+    width: 50%;
+    padding: 26px 26px 26px 0;
+    border-right: solid 1px #ccc;
+    /*background-color: #999999;*/
+}
+
+.reviews {
+    padding: 26px 0 26px 26px;
+    width: 50%;
+    /*background-color: antiquewhite;*/
+}
+
+.svg {
+    width: 20px;
+    height: 20px;
+    margin: 0 4px 1px 0;
+}
+
+.favoriteBox {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.favoriteBox span {
+    font-weight: 500;
+    margin: 3px 0 0 6px;
+    color: #009CF0;
+}
+
+.active span {
+    color: #FFE600;
+}
+
+.vertCenter {
+    align-items: center;
+}
+
+.button {
+    margin-top: 20px;
+}

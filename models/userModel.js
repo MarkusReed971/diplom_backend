@@ -7,13 +7,24 @@ const schema = new Schema({
     age: Number,
     phone: {type: String, unique: true, required: true},
     mail: {type: String, unique: true},
-    address: String,
+    address: {
+        city: String,
+        district: String,
+        street: String,
+        house: String,
+    },
     telegram: String,
-    imageUrl: String,
-    login: {type: String, unique: true, required: true},
+    image: String,
+    username: {type: String, unique: true, required: true},
     password: {type: String, required: true},
-    center_id: {type: ObjectId},
+    centerId: {type: ObjectId},
     type: [{type: String}],
+    favorites: [ObjectId],
+    vacancy: [{
+        centerId: ObjectId,
+        role: String,
+        date: Date,
+    }]
 })
 
 module.exports = model('User', schema)

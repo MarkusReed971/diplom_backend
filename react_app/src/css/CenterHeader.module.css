@@ -1,0 +1,31 @@
+.centerHeader {
+    display: flex;
+}
+
+.centerHeader img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 16px;
+    object-fit: cover;
+}
+
+.centerInfo div {
+    display: flex;
+}
+
+.name {
+    font-size: 25px;
+    font-weight: 500;
+    color: #009CF0;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+.centerInfo div p {
+    margin-left: 15px;
+}
+
+.centerInfo {
+    margin-top: 5px;
+}

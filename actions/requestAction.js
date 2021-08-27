@@ -12,14 +12,14 @@ module.exports = (requestModel) => ({
 
     getById: (_id) => requestModel.findById(_id),
 
-    getAllByUserId: (user_id, skip = 0, limit = 10, sort = 'date') =>
-        requestModel.find({user_id: user_id}).skip(skip).limit(limit).sort(sort),
+    getAllByUserId: (userId, skip = 0, limit = 10, sort = 'date') =>
+        requestModel.find({userId}).skip(skip).limit(limit).sort(sort),
 
-    getAllByCenterId: (center_id, skip = 0, limit = 10, sort = 'date') =>
-        requestModel.find({center_id: center_id}).skip(skip).limit(limit).sort(sort),
+    getAllByCenterId: (centerId, skip = 0, limit = 10, sort = 'date') =>
+        requestModel.find({centerId}).skip(skip).limit(limit).sort(sort),
 
-    getAllByWorkerId: (worker_id, skip = 0, limit = 10, sort = 'date') =>
-            requestModel.find({center_id: worker_id}).skip(skip).limit(limit).sort(sort),
+    getAllByMasterId: (masterId, skip = 0, limit = 10, sort = 'date') =>
+            requestModel.find({masterId}).skip(skip).limit(limit).sort(sort),
 
     getAll: () =>
         requestModel.find()

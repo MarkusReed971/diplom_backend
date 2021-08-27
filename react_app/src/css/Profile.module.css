@@ -1,0 +1,21 @@
+.profile {
+    width: 35%;
+    margin: 26px 26px 26px 0;
+    border-right: 1px solid #cccccc;
+}
+
+.content {
+    width: 65%;
+    margin: 26px 0 26px 26px;
+}
+
+
+.profile h1 {
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.profilePage {
+    display: flex;
+}

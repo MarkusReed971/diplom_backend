@@ -2,20 +2,17 @@ const {Schema, model, ObjectId} = require('mongoose')
 
 const schema = new Schema({
     description: {type: String, required: true},
-    feedback: {type: String},
-    feedback_type: {type: String},
+    feedbackType: {type: String},
     device: {type: String, required: true},
-    center_id: {type: ObjectId, required: true},
-    user_id: {type: ObjectId, required: true},
-    worker_id: {type: ObjectId},
+    centerId: {type: ObjectId, required: true},
+    userId: {type: ObjectId, required: true},
+    masterId: {type: ObjectId},
+    adminId: ObjectId,
     date: {type: Date, required: true},
-    status: {type: String, required: true},
-    images: [
-        {
-            url: String,
-            name: String
-        }
-    ]
+    status: {type: Number, required: true},
+    images: [String],
+    fullname: String,
+    meetingDate: Date,
 })
 
 module.exports = model('Request', schema)

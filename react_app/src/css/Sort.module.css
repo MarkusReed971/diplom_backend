@@ -1,0 +1,37 @@
+.sort {
+    display: flex;
+}
+
+.sort p {
+    margin:0 20px 0 15px;
+    cursor: pointer;
+}
+
+.check {
+    display: flex;
+}
+
+.check p {
+    display: inline;
+    cursor: pointer;
+}
+
+.check input {
+    margin: 1px 10px 0 0;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.withoutCheck input {
+    display: none;
+}
+
+.selected .title {
+    border-bottom: #999999 1px solid;
+    font-weight: bold;
+}
+
+.title {
+    line-height: 23px;
+}

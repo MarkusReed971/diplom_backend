@@ -1,0 +1,44 @@
+.detailsHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.status {
+    font-weight: 500;
+}
+
+.date {
+    color: #999999;
+    font-size: 12px;
+}
+
+.item {
+    margin-top: 10px;
+}
+
+.right {
+    margin-left: 20px;
+}
+
+.flex {
+    display: flex;
+}
+
+.day {
+    width: 100px;
+}
+
+h2 {
+    margin: 0 15px 5px 0;
+}
+
+.img {
+    width: 132px;
+    height: 95px;
+    border-radius: 2px;
+}
+
+.images {
+    display: flex;
+    justify-content: space-between;
+}

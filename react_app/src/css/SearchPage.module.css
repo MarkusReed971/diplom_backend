@@ -1,0 +1,115 @@
+h1 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.search {
+    width: 100%;
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.search input {
+    box-sizing: border-box;
+    height: 36px;
+    border: solid 2px #009CF0;
+    border-radius: 3px;
+    padding-left: 10px;
+
+}
+
+.search input::placeholder {
+    color: #999999;
+}
+
+.title_input {
+    width: 70%;
+}
+
+.city_input {
+    width: 20%;
+    border-left: none!important;
+}
+
+.search div {
+    width: 10%;
+    background-color: #009CF0;
+    height: 36px;
+    line-height: 32px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: solid 2px #009CF0;
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+.sortBox {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.sort {
+    display: flex;
+}
+
+.sort p {
+    margin:0 20px 0 15px;
+    cursor: pointer;
+}
+
+.check {
+    display: flex;
+}
+
+.check p {
+    display: inline;
+    cursor: pointer;
+}
+
+.check input {
+    margin: 1px 10px 0 0;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.withoutCheck input {
+    display: none;
+}
+.searchBox {
+    margin-bottom: 30px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.results {
+    width: 870px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reset {
+    font-size: 12px;
+    color: #009CF0;
+    margin: auto 0;
+    cursor: pointer;
+}
+
+.reset:hover {
+    border-bottom: 1px solid #009CF0;
+}

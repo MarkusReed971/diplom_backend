@@ -1,0 +1,50 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.button {
+    margin-right: 20px;
+}
+
+.details {
+    width: 50%;
+    padding: 26px 26px 26px 0;
+    border-right: solid 1px #ccc;
+}
+
+.workers {
+    padding: 26px 0 26px 26px;
+    width: 50%;
+}
+
+.content {
+    display: flex;
+}
+
+.add {
+    display: flex;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.svg {
+    height: 30px;
+    width: 30px;
+    margin: 2px 15px 2px 5px;
+}
+
+.add p {
+    color: #009CF0;
+    font-weight: 500;
+    line-height: 34px;
+}
+
+.workerList {
+    margin-top: 10px;
+}

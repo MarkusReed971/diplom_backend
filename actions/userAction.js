@@ -12,7 +12,11 @@ module.exports = (userModel) => ({
 
     getById: (_id) => userModel.findById(_id),
 
-    getAllByCenterId: (center_id) => userModel.find({center_id: center_id}),
+    getAllByCenterId: (centerId) => userModel.find({centerId}),
+
+    getByAuth: (username, password) => userModel.findOne({username, password}),
+
+    isExist: (phone, mail, username) => userModel.findOne({$or: [{mail}, {phone}, {username}]}).then(res => !!res),
 
     getAll: (skip = 0, limit = 10, sort = 'name', name = '') =>
         userModel.find({fullname: {$regex: new RegExp(name), $options: 'i'}}).skip(skip).limit(limit).sort(sort)

@@ -12,6 +12,8 @@ module.exports = (dialogModel) => ({
 
     getById: (_id) => dialogModel.findById(_id),
 
+    isExist: (user_id, user_to) => dialogModel.findOne({user_id, user_to}).then(res => !!res),
+
     getAllByUserId: (user_id) => dialogModel.find({user_id: user_id}),
 
     getAll: (skip = 0, limit = 10) =>

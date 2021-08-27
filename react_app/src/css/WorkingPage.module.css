@@ -1,0 +1,49 @@
+.swapRole {
+    display: flex;
+    margin: auto 0;
+}
+
+.swapRole p {
+    margin:0 20px 0 15px;
+    cursor: pointer;
+}
+
+.swapRole .check {
+    display: flex;
+    height: 40px;
+    color: white;
+    width: 214px;
+    background-color: #999;
+    align-items: center;
+    border-radius: 2px;
+    font-weight: 500;
+}
+
+.swapRole .check p {
+    cursor: pointer;
+    padding: 10px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.swapRole .check input {
+    margin: 1px 10px 0 0;
+    height: 16px;
+    width: 16px;
+    cursor: pointer;
+}
+
+.swapRole .withoutCheck input {
+    display: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.swapRole .selected {
+    background-color: #009CF0;
+}
+

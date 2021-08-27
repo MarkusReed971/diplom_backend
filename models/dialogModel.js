@@ -1,10 +1,10 @@
 const {Schema, model, ObjectId} = require('mongoose')
 
 const schema = new Schema({
-    user_id: {type: ObjectId, required: true},
-    user_to: {type: ObjectId, required: true},
-    last_message: Date,
-    is_checked: Boolean,
+    userId: {type: ObjectId, required: true},
+    userTo: {type: ObjectId, required: true},
+    lastMessage: Date,
+    isChecked: Boolean,
     messages: [
         {
             text: String,

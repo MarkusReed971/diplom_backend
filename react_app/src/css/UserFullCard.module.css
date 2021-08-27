@@ -1,0 +1,29 @@
+.fullCard img  {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border-radius: 50%;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.item {
+    display: flex;
+    margin: 10px 0 0;
+}
+
+.item h2 {
+    font-weight: 500;
+    margin-right: 15px;
+}
+
+.change {
+    display: block;
+    margin-top: 10px;
+    color: #009CF0;
+    cursor: pointer;
+}
